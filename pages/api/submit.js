@@ -1,5 +1,28 @@
-import { getFirebaseDatabase} from '../firebase'; // Update the import path based on your project structure
+ 
 import { ref, push, set } from 'firebase/database';
+
+ // Update the import path based on your project structure
+
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+const firebaseConfig = {
+  apiKey: process.env.NEXT_PUBLIC_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_authDomain,
+  databaseURL: "https://handy-woodland-395003-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: process.env.NEXT_PUBLIC_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_appId,
+  measurementId: process.env.NEXT_PUBLIC_measurementId,
+};
+
+const app = initializeApp(firebaseConfig);
+const database = getDatabase(app);
+
+const getFirebaseDatabase = () => database;
+
+
 
 
 export default async function handler(req, res) {
@@ -7,7 +30,7 @@ export default async function handler(req, res) {
     const { name, email, phone, course, college } = req.body;
 
     try {
-      const usersRef = ref(getFirebaseDatabase, 'users'); // Create a reference using ref method
+      const usersRef = ref(getFirebaseDatabase(), 'users'); // Create a reference using ref method
       const newUserRef = push(usersRef); // Push a new child node to the reference
 
       await set(newUserRef, {
