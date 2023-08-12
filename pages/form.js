@@ -1,6 +1,6 @@
 // components/UserForm.js
 import React, { useState } from 'react';
-import { database } from './firebase';
+import { getFirebaseDatabase } from '../config/firebase';
 import { ref, push, set } from 'firebase/database';
 
 
@@ -18,7 +18,7 @@ function UserForm() {
   const handleSubmit = async (e) => {
       e.preventDefault();
   ;
-      const usersRef = ref(database, 'submit'); // Create a reference using ref method
+      const usersRef = ref(getFirebaseDatabase(), 'submit'); // Create a reference using ref method
       const newUserRef = push(usersRef); // Push a new child node to the reference
   
     await set(newUserRef, {

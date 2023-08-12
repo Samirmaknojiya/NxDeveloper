@@ -1,4 +1,4 @@
-import { database} from '../firebase'; // Update the import path based on your project structure
+import { getFirebaseDatabase} from '../firebase'; // Update the import path based on your project structure
 import { ref, push, set } from 'firebase/database';
 
 
@@ -7,7 +7,7 @@ export default async function handler(req, res) {
     const { name, email, phone, course, college } = req.body;
 
     try {
-      const usersRef = ref(database, 'users'); // Create a reference using ref method
+      const usersRef = ref(getFirebaseDatabase, 'users'); // Create a reference using ref method
       const newUserRef = push(usersRef); // Push a new child node to the reference
 
       await set(newUserRef, {
