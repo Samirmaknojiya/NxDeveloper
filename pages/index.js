@@ -227,14 +227,14 @@ export default function Home() {
           <div>
             <h3 className="text-3xl py-1 dark:text-white mb-10">About Me</h3>
             <h2 className="text-6xl bg-gradient-to-r from-gray-400 to-gray-900 bg-clip-text text-transparent leading-12 text-gray-800 mb-5">
-              Hi, I&aposm <br/>
+              Hi, I am <br/>
               Sameer
             </h2>
             <h4 className="text-xl font-bold text-slate-500 mb-10">I Teach Aspiring Students About AI and Development</h4>
             <p className="text-slate-700 bg-clip-text leading-12 text-gray-800 mb-12">
-              I&aposm AI Engineer and Developer for last 3 years, I&aposm studing Master of Science in Artificial Inteligence and 
-              Machine Learning From Woolf University(Europe) and done Internship as Data Scientist in Scaler DSML, before 
-              that I&aposve done B.tech from Parul University.
+              I am a AI Engineer and Developer for last 3 years, I studing Master of Science in Artificial Inteligence and 
+              Machine Learning From Woolf University(Europe) and done Internship as Data Scientist at Scaler DSML, before 
+              that I have done B.tech from Parul University.
             </p>
             <p className="text-xl font-bold text-slate-500 mb-12">I have Passion of teaching young minds about AI and FullStack Development </p>
           </div>
